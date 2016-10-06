@@ -11,21 +11,11 @@ Installation
 ------------
 
 Require
-[`yproximite/ekomi-api-bundle`](https://github.com/Yproximite/EkomiBundle)
+[`yproximite/ekomi-api-bundle`](https://packagist.org/packages/yproximite/ekomi-api-bundle)
 to your `composer.json` file:
 
 ```json
-{
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.com:Yproximite/ekomi-api-bundle"
-        }
-    ],
-    "require": {
-        "yproximite/ekomi-api-bundle": "dev-master"
-    }
-}
+$ composer require yproximite/ekomi-api-bundle
 ```
 
 Register the bundle in `app/AppKernel.php`:
