@@ -1,0 +1,25 @@
+{
+  "name": "yproximite/ekomi-api-bundle",
+  "description": "Integration of eKomi API into Symfony",
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:Yproximite/ekomi-api"
+    }
+  ],
+  "require": {
+    "symfony/framework-bundle": "~2.1|~3.0",
+    "yproximite/ekomi-api": "dev-master"
+  },
+  "require-dev": {
+    "php": ">=5.4"
+  },
+  "autoload": {
+    "psr-0": {
+      "Yproximite\\Bundle\\EkomiApiBundle": ""
+    }
+  },
+  "target-dir": "Yproximite/Bundle/EkomiApiBundle"
+}

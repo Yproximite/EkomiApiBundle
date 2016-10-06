@@ -1,0 +1,15 @@
+parameters:
+    yproximite.ekomi_api.client.class: "Yproximite\Ekomi\Api\Client"
+    yproximite.ekomi_api.http_client.class: "Http\Adapter\Guzzle6\Client"
+
+services:
+    yproximite.ekomi_api.http_client:
+        public: false
+        class: "%yproximite.ekomi_api.http_client.class%"
+
+    yproximite.ekomi_api.client:
+        class: "%yproximite.ekomi_api.client.class%"
+        arguments:
+            - "@yproximite.ekomi_api.http_client"
+            - "%yproximite.ekomi_api.client_id%"
+            - "%yproximite.ekomi_api.secret_key%"
