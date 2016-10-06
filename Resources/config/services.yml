@@ -1,6 +1,6 @@
 parameters:
-    yproximite.ekomi_api.client.class: "Yproximite\Ekomi\Api\Client"
-    yproximite.ekomi_api.http_client.class: "Http\Adapter\Guzzle6\Client"
+    yproximite.ekomi_api.client.class: 'Yproximite\Ekomi\Api\Client'
+    yproximite.ekomi_api.http_client.class: 'Http\Adapter\Guzzle6\Client'
 
 services:
     yproximite.ekomi_api.http_client:
