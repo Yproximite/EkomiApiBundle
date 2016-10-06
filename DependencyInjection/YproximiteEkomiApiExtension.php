@@ -9,9 +9,9 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 /**
- * Class YproximiteEkomiExtension
+ * Class YproximiteEkomiApiExtension
  */
-class YproximiteEkomiExtension extends Extension
+class YproximiteEkomiApiExtension extends Extension
 {
     /**
      * {@inheritdoc}
