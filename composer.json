@@ -3,6 +3,12 @@
   "description": "Integration of eKomi API into Symfony",
   "type": "symfony-bundle",
   "license": "MIT",
+  "authors": [
+    {
+      "name": "Nikita Sviridenko",
+      "email": "mail.sviridenko@gmail.com"
+    }
+  ],
   "repositories": [
     {
       "type": "vcs",
@@ -10,15 +16,21 @@
     }
   ],
   "require": {
+    "php": "^7.0",
     "symfony/framework-bundle": "~2.1|~3.0",
-    "yproximite/ekomi-api": "^1.0.0"
+    "yproximite/ekomi-api": "^2.0.0"
   },
   "require-dev": {
-    "php": ">=5.4"
+    "phpspec/phpspec": "^3.2",
+    "m6web/Symfony2-coding-standard": "^3.3.0",
+    "m6web/coke": "^2.1"
+  },
+  "config": {
+    "bin-dir": "bin"
   },
   "autoload": {
     "psr-4": {
-      "Yproximite\\Bundle\\EkomiApiBundle\\": ""
+      "Yproximite\\Bundle\\EkomiApiBundle\\": "src"
     }
   }
 }

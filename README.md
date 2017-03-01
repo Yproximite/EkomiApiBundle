@@ -14,7 +14,7 @@ Require
 [`yproximite/ekomi-api-bundle`](https://packagist.org/packages/yproximite/ekomi-api-bundle)
 to your `composer.json` file:
 
-```json
+```
 $ composer require yproximite/ekomi-api-bundle
 ```
 
@@ -33,26 +33,40 @@ public function registerBundles()
 
 Enable the bundle's configuration in `app/config/config.yml`:
 
-``` yaml
+```yaml
 # app/config/config.yml
 yproximite_ekomi_api:
+
+    # Identifier of the service that represents "Http\Client\HttpClient"
+    http_client: httplug.client.guzzle6
+
+    # Credentials
     client_id: 999999
     secret_key: xxxxxxxxxxxxxx
+
+    # Base url for the API, optional, by default is "https://csv.ekomi.com/api/3.0"
+    base_url: https://csv.ekomi.com/api/3.0
 ```
 
 Usage
 -----
 
 ```php
-use Yproximite\Ekomi\Api\Model\OrderCollection;
+use Yproximite\Ekomi\Api\Message\Order\OrderListMessage;
 
-$request = new GetOrdersRequest();
-$request
-    ->setOffset(5)
-    ->setLimit(10)
-    ->setCreatedFrom(new \DateTime('2016-10-06 00:00:10'))
-;
+$api = $this->get('yproximite.ekomi_api.service_aggregator');
 
-// @var OrderCollection
-$response = $this->get('yproximite.ekomi_api.client')->sendRequest($request);
+$message = new OrderListMessage();
+$message->setOffset(5);
+$message->setLimit(10);
+$message->setOrderBy(OrderListMessage::ORDER_BY_CREATED);
+$message->setOrderDirection(OrderListMessage::ORDER_DIRECTION_DESC);
+$message->setWithFeedbackOnly(true);
+$message->setCreatedFrom(new \DateTime('2016-10-06 00:00:10'));
+$message->setCreatedTill(new \DateTime('2016-11-06 00:14:29'));
+$message->setShopId(11);
+$message->setCustomDataFilter(['vendor_id' => 123]);
+
+// Yproximite\Ekomi\Api\Model\Order\Order[]
+$orders = $api->order()->getOrders($message);
 ```
