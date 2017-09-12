@@ -29,6 +29,8 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('client_id')->isRequired()->cannotBeEmpty()->end()
                 ->scalarNode('secret_key')->isRequired()->cannotBeEmpty()->end()
                 ->scalarNode('base_url')->cannotBeEmpty()->end()
+                ->scalarNode('cache')->cannotBeEmpty()->end()
+                ->scalarNode('cache_key')->cannotBeEmpty()->end()
             ->end()
         ;
 

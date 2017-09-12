@@ -46,6 +46,10 @@ yproximite_ekomi_api:
 
     # Base url for the API, optional, by default is "https://csv.ekomi.com/api/3.0"
     base_url: https://csv.ekomi.com/api/3.0
+
+    # cache
+    cache: cache.app
+    cache_key: xxxxx
 ```
 
 Usage
