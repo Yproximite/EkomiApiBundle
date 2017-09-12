@@ -19,6 +19,7 @@
     "m6web/Symfony2-coding-standard": "^3.3.0",
     "m6web/coke": "^2.1"
   },
+  "minimum-stability": "dev",
   "config": {
     "bin-dir": "bin"
   },
