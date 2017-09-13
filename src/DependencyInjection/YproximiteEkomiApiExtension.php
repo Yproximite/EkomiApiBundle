@@ -59,14 +59,22 @@ class YproximiteEkomiApiExtension extends Extension
 
         if (array_key_exists('base_url', $this->config)) {
             $arguments[] = $this->config['base_url'];
+        } else {
+            $arguments[] = Client::BASE_URL;
         }
+
+        $arguments[] = null; // MessageFactory
 
         if (array_key_exists('cache', $this->config)) {
             $arguments[] = new Reference($this->config['cache']);
+        } else {
+            $arguments[] = null;
         }
 
         if (array_key_exists('cache_key', $this->config)) {
             $arguments[] = $this->config['cache_key'];
+        } else {
+            $arguments[] = Client::CACHE_KEY;
         }
 
         $client = new Definition(Client::class, $arguments);

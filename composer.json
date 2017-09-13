@@ -9,16 +9,10 @@
       "email": "mail.sviridenko@gmail.com"
     }
   ],
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/Yproximite/ekomi-api.git"
-    }
-  ],
   "require": {
     "php": "^7.0",
     "symfony/framework-bundle": "~2.1|~3.0",
-    "yproximite/ekomi-api": "dev-feature/cache as v2.0.2-dev"
+    "yproximite/ekomi-api": "^2.1.0"
   },
   "require-dev": {
     "phpspec/phpspec": "^3.2",
