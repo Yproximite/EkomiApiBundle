@@ -11,7 +11,7 @@
   ],
   "require": {
     "php": "^7.0",
-    "symfony/framework-bundle": "~2.1|~3.0",
+    "symfony/framework-bundle": "~2.1|~3.0|^4.0",
     "yproximite/ekomi-api": "^2.1.0"
   },
   "require-dev": {
