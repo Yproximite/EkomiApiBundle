@@ -87,6 +87,7 @@ class YproximiteEkomiApiExtension extends Extension
     {
         $clientRef  = new Reference('yproximite.ekomi_api.client');
         $aggregator = new Definition(ServiceAggregator::class, [$clientRef]);
+        $aggregator->setPublic(true);
 
         $this->container->setDefinition('yproximite.ekomi_api.service_aggregator', $aggregator);
     }

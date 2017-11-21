@@ -31,7 +31,15 @@ class YproximiteEkomiApiExtensionSpec extends ObjectBehavior
 
         $container->setAlias('yproximite.ekomi_api.http_client', 'httplug.client.guzzle6')->shouldBeCalled();
 
-        $arguments = [new Reference('yproximite.ekomi_api.http_client'), 'xxxx', 'yyyy', 'http://api.host.com'];
+        $arguments = [
+            new Reference('yproximite.ekomi_api.http_client'),
+            'xxxx',
+            'yyyy',
+            'http://api.host.com',
+            null,
+            null,
+            'yproximite.ekomi.cache_key',
+        ];
 
         $client = new Definition(Client::class, $arguments);
         $client->setPublic(false);
@@ -40,6 +48,7 @@ class YproximiteEkomiApiExtensionSpec extends ObjectBehavior
 
         $clientRef  = new Reference('yproximite.ekomi_api.client');
         $aggregator = new Definition(ServiceAggregator::class, [$clientRef]);
+        $aggregator->setPublic(true);
 
         $container->setDefinition('yproximite.ekomi_api.service_aggregator', $aggregator)->shouldBeCalled();
 
