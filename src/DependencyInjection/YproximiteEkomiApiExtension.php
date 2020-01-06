@@ -1,14 +1,14 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Yproximite\Bundle\EkomiApiBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Processor;
-use Symfony\Component\DependencyInjection\Reference;
-use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Definition;
+use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
-
 use Yproximite\Ekomi\Api\Client\Client;
 use Yproximite\Ekomi\Api\Service\ServiceAggregator;
 
