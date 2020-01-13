@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Yproximite\Bundle\EkomiApiBundle\DependencyInjection;
@@ -16,9 +17,10 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
+        $treeBuilder = new TreeBuilder('yproximite_ekomi_api');
 
-        $rootNode = $treeBuilder->root('yproximite_ekomi_api');
+        $rootNode = \method_exists($treeBuilder, 'getRootNode') ? $treeBuilder->getRootNode() : $treeBuilder->root('yproximite_ekomi_api');
+
         $rootNode
             ->children()
                 ->scalarNode('http_client')

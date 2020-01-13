@@ -1,24 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace spec\Yproximite\Bundle\EkomiApiBundle\DependencyInjection;
 
 use PhpSpec\ObjectBehavior;
-use Symfony\Component\DependencyInjection\Reference;
-use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-
+use Symfony\Component\DependencyInjection\Definition;
+use Symfony\Component\DependencyInjection\Reference;
+use Yproximite\Bundle\EkomiApiBundle\DependencyInjection\YproximiteEkomiApiExtension;
 use Yproximite\Ekomi\Api\Client\Client;
 use Yproximite\Ekomi\Api\Service\ServiceAggregator;
-use Yproximite\Bundle\EkomiApiBundle\DependencyInjection\YproximiteEkomiApiExtension;
 
 class YproximiteEkomiApiExtensionSpec extends ObjectBehavior
 {
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType(YproximiteEkomiApiExtension::class);
     }
 
-    function it_should_load(ContainerBuilder $container)
+    public function it_should_load(ContainerBuilder $container)
     {
         $configs = [
             'yproximite_ekomi_api' => [
